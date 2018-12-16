@@ -1,10 +1,7 @@
 ﻿namespace fsharpingwebapi.Controllers
 
-open System
-open System.Collections.Generic
-open System.Linq
-open System.Threading.Tasks
 open Microsoft.AspNetCore.Mvc
+open Personas
 
 [<Route("api/[controller]")>]
 [<ApiController>]
@@ -18,8 +15,12 @@ type ValuesController () =
 
     [<HttpGet("{id}")>]
     member this.Get(id:int) =
-        let value = "value"
-        ActionResult<string>(value)
+        let person = ConstructorPerson("Ingve", 10)
+
+        let myAge = age person
+        let resu = addoneDouble myAge
+
+        ActionResult<int>(resu)
 
     [<HttpPost>]
     member this.Post([<FromBody>] value:string) =
