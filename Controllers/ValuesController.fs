@@ -16,11 +16,27 @@ type ValuesController () =
     [<HttpGet("{id}")>]
     member this.Get(id:int) =
         let person = ConstructorPerson("Ingve", 10)
+        let constructorLEss =  {
+                Name = "INgve"
+                Age = 35
+                }
 
         let myAge = age person
         let resu = addoneDouble myAge
 
-        ActionResult<int>(resu)
+        let result = 5 |> addone |> double
+
+        let orange = Apple
+        let bla = Y
+        let blabla digit = 
+            match digit with
+            | X -> 10
+            | V -> 5
+            | Y -> 1
+
+        let res = blabla X
+
+        ActionResult<int>(res)
 
     [<HttpPost>]
     member this.Post([<FromBody>] value:string) =

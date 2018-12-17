@@ -17,9 +17,22 @@ let addone x = x + 1
 
 let double x = x * 2
 
-let addoneDouble x =
+let addoneDouble =
     addone >> double
 
 let result x = 
     addoneDouble x
             
+
+// type Apple = {
+//     Name: string
+// }
+
+// type Banana = {
+//     Name: string
+// }
+
+type Fruit = Apple | Banana | Dig of int
+
+type Roman = V | X | Y
+        
